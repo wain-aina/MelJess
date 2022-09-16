@@ -1,0 +1,100 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Antic+Didone&family=Cinzel:wght@600&display=swap');*/
+
+body {
+    font-family: "Cinzel", "Antic Didone", sans-serif;
+    background: linear-gradient(to right, hsl(0, 0%, 0%, 1.0), #fffff0);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.words {
+    background: linear-gradient(to right, #fffff0, hsl(0, 0%, 0%, 1.0));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-size: 0;
+    line-height: 1.5;
+}
+
+.words span {
+    font-size: 7.5rem;
+    display: inline-block;
+    animation: move 3s ease-in-out infinite;
+    justify-content: space-between;
+}
+
+span:nth-child(5) {
+    margin: 0 auto;
+}
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    padding: 30px 60px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    font-size: 2rem;
+}
+
+.button span {
+    background: #fffff0;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-family: "Cinzel", "Antic Didone", sans-serif;
+}
+
+.button:hover {
+    animation: pulsate 2s ease-in;
+}
+
+@keyframes move {
+    0% {
+        transform: translate(-30% 0);
+    }
+    50% {
+        text-shadow: 0 25px 50px rgba(0,0,0,0.75);
+    }
+    100% {
+        transform: translate(30% 0);
+    }
+}
+
+.words span:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.words span:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.words span:nth-child(4) {
+    animation-delay: 1.5s;
+}
+
+.words span:nth-child(5) {
+    animation-delay: 2s;
+}
+
+.words span:nth-child(6) {
+    animation-delay: 2.5s;
+}
+
+.words span:nth-child(7) {
+    animation-delay: 3s;
+}
+
+@keyframes pulsate {
+    0% {
+        box-shadow:
+                0 0 25px #fffff0,
+                0 0 50px #F9F6EE;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .words span {
+        font-size: 4rem;
+    }
+}

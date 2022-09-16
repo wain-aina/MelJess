@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Antic+Didone&family=Cinzel:wght@600&display=swap');
+
+/*these values are used in the images section styling*/
+:root {
+    --level-one: translateZ(3rem);
+    --level-two: translateZ(6rem);
+    --level-three: translateZ(9rem);
+
+    --fw-normal: 400;
+    --fw-bold:700;
+
+    --clr: #b7c9e5;
+}
+
+html, body {
+    background: url("../css/images/bodyback.png");
+    overflow-x: hidden;
+}
+
+/*align content center*/
+body, .card__front, .card__back {
+    align-content: center;
+}
+
+/*values of zero*/
+.filter:before, .card__front, .card__back {
+    left: 0;
+    top: 0;
+}
+/*uppercase text*/
+.card__title, .card__subtitle, .filter {
+    text-transform: uppercase;
+}
+
+/*grid stuff*/
+.drip, .img, .progressbar {
+    display: grid;
+    place-items: center;
+}
+
+/*make text centered*/
+.sub, h2, .card__content, .deed {
+    text-align: center;
+}
+
+/*similar font family*/
+svg text, h2, .card, .deed {
+    font-family: "Cinzel", "Antic Didone", sans-serif;
+}
+
+/*position is relative*/
+.arrow, .card__content, .novel, .filter {
+    position: relative;
+}
+
+/*position is absolute*/
+.card__front, .card__back, .card__front:before, .filter:before {
+    position: absolute;
+}
+
+/*white colored elements*/
+.deed, .card__front, .card__body, .sub, .filter {
+    color: #fff;
+}
+
+/*1.5rem sized texts*/
+.card__body, .deed {
+    font-size: 1.5rem;
+}
+
+/*Subzero styles*/
+.sub {
+    width: 100%;
+}
+
+.sub .zero {
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 6rem;
+    font-weight: 900;
+    text-shadow: -0.08em 0.03em 0.12em rgba(0,0,0,0.9);
+}
+
+.sub .zero:not(:first-child) {
+    margin-left: -0.23em;
+}
+
+/*welcome to subzero*/
+svg text {
+    stroke: #fff;
+    font-size: 4rem;
+    font-weight: 300;
+    stroke-width: 3;
+    animation: textAnimate 4s infinite alternate;
+}
+
+@keyframes textAnimate {
+    0% {
+        stroke-dasharray: 0 50%;
+        stroke-dashoffset:  20%;
+        fill:hsl(0, 0%, 100%)
+    }
+
+    100% {
+        stroke-dasharray: 50% 0;
+        stroke-dashoffstet: -20%;
+        fill: hsla(0, 0%, 100%,0%)
+    }
+}
+
+/*meet the hosts*/
+h2 {
+    font-weight: 400;
+    font-size: 3rem;
+    background: -webkit-linear-gradient(#7FFFD4,
+    #30D5C8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-top: 3%;
+}
+
+/*arrow*/
+.arrow{
+    padding-top: 1%;
+    padding-bottom: 3%;
+}
+
+.arrow span{
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    border-bottom: 5px solid #fff;
+    border-right: 5px solid #fff;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+.arrow span:nth-child(2){
+    animation-delay: -0.2s;
+}
+.arrow span:nth-child(3){
+    animation-delay: -0.4s;
+}
+
+@keyframes animate {
+    0%{
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px,-20px);
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: rotate(45deg) translate(20px,20px);
+    }
+}
+
+/*cards for melvin and jessie*/
+.photos {
+    margin: 0 auto;
+}
+.img {
+    padding: 10% 0 ;
+}
+
+.card {
+    width: 360px;
+    background: transparent !important;
+}
+
+.card__content {
+    padding: 13.5em 4.5em;
+    transition: transform 3s;
+    background-color: transparent;
+    transform-style: preserve-3d;
+}
+
+.card:hover .card__content {
+    transform: rotateY(180deg);
+}
+
+.card__front,
+.card__back {
+    bottom: 0;
+    right: 0;
+    padding: 4.5em 2.7em;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    display: grid;
+}
+
+.card__front, .card__back {
+    background-size: cover;
+    background-blend-mode: overlay;
+}
+
+.card__front1 {
+    background-image: url("../css/images/jessie.jpg");
+}
+
+.card__front2 {
+    background-image: url("../css/images/melvin.png");
+}
+
+.card__front:before {
+    content: "";
+    --spacer: 0.35em;
+    top: var(--spacer);
+    bottom: var(--spacer);
+    right: var(--spacer);
+    left: var(--spacer);
+    transform: var(--level-one);
+}
+
+.card__title {
+    font-size: 2.925rem;
+    transform: var(--level-three);
+    order: 2;
+}
+
+.card__subtitle {
+    transform: var(--level-two);
+    letter-spacing: 4px;
+    font-size: 0.95rem;
+    font-weight: var(--fw-bold);
+    opacity: .8;
+}
+
+.card__body {
+    transform: var(--level-two);
+    font-weight: var(--fw-normal);
+    line-height: 1.6;
+}
+
+.card__back {
+    transform: rotateY(180deg);
+    color: var(--clr);
+    background: #333;
+}
+
+.card__back1 {
+    background-image: url("../css/images/jesbg.jpg");
+}
+
+.card__back2 {
+    background-image: url("../css/images/melsbg.jpg");
+}
+
+/*company information*/
+.vision {
+    padding: 3% 15%;
+}
+
+.deed {
+    font-weight: 100;
+}
+
+.novel {
+    filter: drop-shadow(0 0 5px #5f3);
+    text-decoration: underline;
+    text-decoration-color: #30D5C8;
+}
+
+.happy {
+    filter: drop-shadow(0 0 5px #f63);
+}
+
+.include {
+    padding-top: 16px;
+}
+
+/*join the community styles*/
+.footer {
+    padding-top: 15%;
+}
+
+.filter {
+    font-family: "Avenir Next", sans-serif;
+    font-weight: 900;
+    font-size: 3.5rem;
+    font-style: italic;
+    letter-spacing: 0.05em;
+    display: inline-block;
+}
+
+.filter:before {
+    content: attr(filter-content);
+    filter: url(#motion-blur-filter);
+}
+
+.svg {
+    display: none;
+}
+
+.join, .footer {
+    padding-bottom: 10%;
+}
+
+
+
+
